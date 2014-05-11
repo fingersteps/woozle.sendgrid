@@ -6,7 +6,7 @@ namespace Woozle.SendGrid.Example
     {
         static void Main(string[] args)
         {
-            var emailSystem = new SendGridEMailSystem(new SendGridMail.SendGrid());
+            var emailSystem = new SendGridEMailSystem(SendGridMail.SendGrid.GetInstance(), new SendGridCredentials());
             emailSystem.SendEMail("<<your name>>", "<<your mail>>", "<<target mail>>", "<<mail title>>",
                 "<<mail text>>");
 
