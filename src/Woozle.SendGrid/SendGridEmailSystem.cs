@@ -14,12 +14,10 @@ namespace Woozle.SendGrid
     public class SendGridEMailSystem : IExternalEMailSystem
     {
         private readonly ISendGrid sendGrid;
-        private readonly SendGridCredentials sendGridCredentials;
 
-        public SendGridEMailSystem(ISendGrid sendGrid, SendGridCredentials sendGridCredentials)
+        public SendGridEMailSystem()
         {
-            this.sendGrid = sendGrid;
-            this.sendGridCredentials = sendGridCredentials;
+            this.sendGrid = SendGridMail.SendGrid.GetInstance();
         }
 
         public bool SendEMail(string fromName, string fromAddress, string toAddress, string subject, string text)
@@ -45,12 +43,14 @@ namespace Woozle.SendGrid
             }
         }
 
+        public ExternalEmailSystemCredentials Credentials { get; private set; }
+
         private void SendMail(ISendGrid sendGrid)
         {
             // Create credentials, specifying your user name and password.
             var credentials = new NetworkCredential(
-                sendGridCredentials.Username, 
-                sendGridCredentials.Password);
+                this.Credentials.Username, 
+                this.Credentials.Password);
 
 
             // Create an SMTP transport for sending email.
