@@ -1,4 +1,5 @@
 ﻿using System;
+using Woozle.Domain.ExternalSystem.Mail;
 
 namespace Woozle.SendGrid.Example
 {

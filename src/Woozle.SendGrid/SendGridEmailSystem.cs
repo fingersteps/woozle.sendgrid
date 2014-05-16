@@ -5,13 +5,13 @@ using System.Net;
 using System.Net.Mail;
 using SendGridMail;
 using Woozle.Domain.ExternalSystem;
-using Woozle.ExternalSystem;
+using Woozle.Domain.ExternalSystem.Mail;
 
 namespace Woozle.SendGrid
 {
-    [Export(typeof(IExternalEMailSystem))]
+    [Export(typeof(IExternalMailSystem))]
     [ExternalSystem(Name = "SendGridEMailSystemV1")]
-    public class SendGridEMailSystem : IExternalEMailSystem
+    public class SendGridEMailSystem : IExternalMailSystem
     {
         private readonly ISendGrid sendGrid;
 
@@ -43,7 +43,7 @@ namespace Woozle.SendGrid
             }
         }
 
-        public ExternalEmailSystemCredentials Credentials { get; private set; }
+        public ExternalMailSystemCredentials Credentials { get; set; }
 
         private void SendMail(ISendGrid sendGrid)
         {
@@ -51,7 +51,6 @@ namespace Woozle.SendGrid
             var credentials = new NetworkCredential(
                 this.Credentials.Username, 
                 this.Credentials.Password);
-
 
             // Create an SMTP transport for sending email.
             var transportSMTP = Web.GetInstance(credentials);

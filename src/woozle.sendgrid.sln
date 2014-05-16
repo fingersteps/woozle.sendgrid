@@ -6,6 +6,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Woozle.SendGrid", "Woozle.SendGrid\Woozle.SendGrid.csproj", "{146B2FF9-1528-437C-A9C6-EDFAFFA4D599}"
 EndProject
 Global
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = 32688342-4578-4144-b1cf-4f3a93346e09
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
