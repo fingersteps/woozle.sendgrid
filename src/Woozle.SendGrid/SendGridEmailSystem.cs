@@ -43,7 +43,7 @@ namespace Woozle.SendGrid
             }
         }
 
-        public ExternalMailSystemCredentials Credentials { get; set; }
+        public ExternalSystemCredentials Credentials { get; set; }
 
         private void SendMail(ISendGrid sendGrid)
         {
