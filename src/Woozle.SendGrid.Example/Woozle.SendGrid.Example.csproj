@@ -101,17 +101,21 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Woozle">
-      <HintPath>..\packages\Woozle.0.0.12-prerelease\lib\Woozle.dll</HintPath>
+    <Reference Include="Woozle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Woozle.0.0.12\lib\Woozle.dll</HintPath>
     </Reference>
-    <Reference Include="Woozle.Model">
-      <HintPath>..\packages\Woozle.0.0.12-prerelease\lib\Woozle.Model.dll</HintPath>
+    <Reference Include="Woozle.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Woozle.0.0.12\lib\Woozle.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Woozle.Persistence">
-      <HintPath>..\packages\Woozle.0.0.12-prerelease\lib\Woozle.Persistence.dll</HintPath>
+    <Reference Include="Woozle.Persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Woozle.0.0.12\lib\Woozle.Persistence.dll</HintPath>
     </Reference>
-    <Reference Include="Woozle.Persistence.Ef">
-      <HintPath>..\packages\Woozle.0.0.12-prerelease\lib\Woozle.Persistence.Ef.dll</HintPath>
+    <Reference Include="Woozle.Persistence.Ef, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Woozle.0.0.12\lib\Woozle.Persistence.Ef.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
