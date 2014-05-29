@@ -3,7 +3,7 @@ using System.ComponentModel.Composition;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Mail;
-using SendGridMail;
+using SendGrid;
 using Woozle.Domain.ExternalSystem;
 using Woozle.Domain.ExternalSystem.Mail;
 
@@ -17,7 +17,7 @@ namespace Woozle.SendGrid
 
         public SendGridEMailSystem()
         {
-            this.sendGrid = SendGridMail.SendGrid.GetInstance();
+            this.sendGrid = new SendGridMessage();
         }
 
         public bool SendEMail(string fromName, string fromAddress, string toAddress, string subject, string text)
@@ -53,7 +53,7 @@ namespace Woozle.SendGrid
                 this.Credentials.Password);
 
             // Create an SMTP transport for sending email.
-            var transportSMTP = Web.GetInstance(credentials);
+            var transportSMTP = new Web(credentials);
 
             // Send the email.
             transportSMTP.Deliver(sendGrid);
