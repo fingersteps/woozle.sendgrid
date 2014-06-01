@@ -13,7 +13,7 @@ namespace Woozle.SendGrid
     [ExternalSystem(Name = "SendGridEMailSystemV1")]
     public class SendGridEMailSystem : IExternalMailSystem
     {
-        private readonly ISendGrid sendGrid;
+        private ISendGrid sendGrid;
 
         public SendGridEMailSystem()
         {
@@ -27,6 +27,7 @@ namespace Woozle.SendGrid
             try
             {
                 // Create the email object first, then add the properties.
+                sendGrid = new SendGridMessage();
                 sendGrid.From = new MailAddress(fromAddress, fromName);
                 sendGrid.AddTo(toAddress);
                 sendGrid.Subject = subject;
